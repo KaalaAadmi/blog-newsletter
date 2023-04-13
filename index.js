@@ -38,6 +38,17 @@ app.post("/newsletter", async (req, res) => {
   }
 });
 
+
+app.post('/api/blog', async (req, res) => {
+  const newBlog = new Blog(req.body);
+  try {
+    const savedBlog = await newBlog.save();
+    res.status(200).json({ success: true, savedBlog });
+  } catch (error) {
+    console.log(error);
+  }
+})
+
 connect();
 
 app.listen(process.env.PORT || port, () => {
