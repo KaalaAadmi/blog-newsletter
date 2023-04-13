@@ -3,6 +3,7 @@ import serverless from "serverless-http";
 import mongoose from "mongoose";
 import cors from "cors";
 import Newsletter from "./models/Newsletter.js";
+import Blog from "./models/Blog.js";
 import dotenv from "dotenv";
 
 const app = express();
